@@ -1,0 +1,37 @@
+identity:
+  name: page_search_api
+  author: CoderSun
+  label:
+    en_US: Search Confluence pages
+    zh_Hans: 搜索Confluence页面
+description:
+  human:
+    en_US: Search for Confluence pages using keywords within a specified space
+    zh_Hans: 在指定的空间中根据关键字搜索Confluence页面
+  llm: 根据关键字在指定的Confluence空间中搜索页面，返回匹配的页面列表，包含页面ID、标题和摘要信息
+extra:
+  python:
+    source: tools/page_search.py
+parameters:
+  - name: keyword
+    type: string
+    required: true
+    label:
+      en_US: Search Keyword
+      zh_Hans: 搜索关键字
+    human_description:
+      en_US: Please input the search keyword
+      zh_Hans: 请输入搜索关键字
+    llm_description: 用于搜索的关键字
+    form: llm
+  - name: spaceKey
+    type: string
+    required: true
+    label:
+      en_US: Space Key
+      zh_Hans: 空间标识
+    human_description:
+      en_US: Please input the Confluence space key
+      zh_Hans: 请输入Confluence空间标识
+    llm_description: Confluence空间的唯一标识符
+    form: llm 
